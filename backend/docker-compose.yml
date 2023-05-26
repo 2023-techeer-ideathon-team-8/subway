@@ -8,13 +8,13 @@ services:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-      MYSQL_DATABASE: mysql
+      MYSQL_DATABASE: mysqldb
 
 
-  backend:
-    build:
-      context: .
-    command: gradle bootRun
-    container_name: backend
-    restart: on-failure
-    tty: true
+#  backend:
+#    build:
+#      context: .
+#    command: gradle bootRun
+#    container_name: backend
+#    restart: on-failure
+#    tty: true
