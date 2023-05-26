@@ -1,6 +1,9 @@
 .Result_selectBox {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
   & > select {
-    width: 30rem;
+    width: 25rem;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -8,17 +11,17 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     color: #333;
-    margin: 1rem;
+    margin-right: 1rem;
   }
   & > button {
-    padding: 10px 20px;
+    min-width: 8rem;
+    height: 5rem;
     font-size: 16px;
     border-radius: 5px;
     border: none;
     background-color: green;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
   & > button:hover {
     opacity: 0.8;
