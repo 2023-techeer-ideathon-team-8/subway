@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState, lazy } from "react";
 import "./styles.scss";
+import { routes } from "../Routes";
+import { useNavigate } from "react-router-dom";
+const OtherPage = lazy(() => import("../other"));
 const Main = () => {
+  const [subway, setSubway] = useState<string | null>(null);
+  const navigate = useNavigate();
+
   const changeSubWayHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
+    setSubway(e.target.value)
   };
   const changeInOutHandle = (e: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(e.target.value);
   };
+  const onClickHandle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    navigate('/other');
+  }
   return (
     <div className="main_back">
       <div className="main_content">
@@ -33,7 +42,7 @@ const Main = () => {
             </select>
           </div>
 
-          <button type="button">찾기</button>
+          <button type="button" onClick={onClickHandle}>찾기</button>
         </div>
       </div>
     </div>
