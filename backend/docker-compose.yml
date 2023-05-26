@@ -1,0 +1,21 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+
+
+  backend:
+    build:
+      context: .
+    command: gradle bootRun
+    container_name: backend
+
+    restart: on-failure
+    tty: true
