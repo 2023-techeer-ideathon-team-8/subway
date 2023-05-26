@@ -20,7 +20,7 @@ public class Toilet {
     private Long id;
 
     @Column(name = "exit_station")
-    private String exitStation;
+    private Long exitStation;
 
     @Column(name = "location")
     private String location;
