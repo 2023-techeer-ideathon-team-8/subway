@@ -20,10 +20,14 @@ public class Toilet {
     private Long id;
 
     @Column(name = "exit_station")
-    private String exitStation;
+    private Long exitStation;
 
     @Column(name = "location")
     private String location;
+
+    private boolean inside;
+
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "station_id")
