@@ -1,14 +1,14 @@
 version: "3"
 services:
   db:
-    image: postgres
+    image: mysql
     restart: always
     container_name: db
     ports:
-      - "5433:5432"
+      - "3307:3306"
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 1234
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: mysql
 
 
   backend:
@@ -16,6 +16,5 @@ services:
       context: .
     command: gradle bootRun
     container_name: backend
-
     restart: on-failure
     tty: true
