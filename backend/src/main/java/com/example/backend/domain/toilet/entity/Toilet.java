@@ -1,12 +1,17 @@
 package com.example.backend.domain.toilet.entity;
 
 import com.example.backend.domain.station.entity.Station;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "TOILET")
 public class Toilet {
     @Id
@@ -14,13 +19,13 @@ public class Toilet {
     @Column(name = "toilet_id")
     private Long id;
 
-    @Column(name = "exit")
-    private String exit;
+    @Column(name = "exit_station")
+    private String exitStation;
 
     @Column(name = "location")
     private String location;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "station_id")
     private Station station;
 }
