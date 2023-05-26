@@ -1,19 +1,19 @@
 spring:
   jpa:
-    database: postgresql
+    database: mysql
     show-sql: true
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-        format_sql: true
-    generate-ddl: true
+        format_sql: false
+    generate-ddl: false
 
 
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://db:3306/mysql
+    url: jdbc:mysql://localhost:3307/mysqldb
     username: root
     password: 1234
 
